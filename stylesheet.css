@@ -1,0 +1,21 @@
+/** @format */
+
+#header {
+	display: grid;
+	background-color: aqua;
+	position: sticky;
+	grid-template-columns: 1fr 1fr 1fr;
+	margin: auto;
+	margin-left: 200px;
+	margin-top: 20%;
+}
+img {
+	height: 100px;
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body {
+	background-color: rgb(230, 230, 230);
+}
