@@ -6,10 +6,36 @@ html {
 	padding: 0%;
 }
 
+#spray-man {
+	position: fixed;
+	background-size: 10em;
+	background-image: url(images/Chicago_Closed_Cell_Spray_Foam_Insulation_In_Wall.jpg);
+	background-color: #0ab89b;
+	background-blend-mode: soft-light;
+	width: 100%;
+	clip-path: polygon(
+		42% 0,
+		35% 90%,
+		40% 90%,
+		45% 21%,
+		97% 25%,
+		96% 36%,
+		56% 35%,
+		52% 60%,
+		100% 60%,
+		100% 0
+	);
+	z-index: 2;
+}
+
+#snl-logo {
+}
+
 #header {
 	display: grid;
 	background-color: rgb(255, 255, 255);
-	position: fixed;
+
+	position: sticky;
 	grid-auto-flow: column;
 	width: 100%;
 	margin: 0 auto;
@@ -19,9 +45,18 @@ html {
 	font-family: "Oleo Script Swash Caps", cursive;
 	color: rgba(0, 0, 0, 0.685);
 	font-size: 3ch;
+	justify-self: right;
 	align-self: end;
 	padding-bottom: 10px;
-	justify-self: center;
+	padding-right: 30px;
+	text-decoration: none;
+}
+
+.box-shadow {
+	display: block;
+
+	width: 100%;
+	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.836);
 }
 
 img {
@@ -33,12 +68,31 @@ img {
 }
 
 body {
+	position: relative;
+
 	height: 100%;
 	width: 100%;
 	margin: 0%;
 	padding: 0%;
-	background-color: rgba(0, 255, 242, 0.726);
-	background-image: url(/SNL-industries/images/Chicago_Closed_Cell_Spray_Foam_Insulation_In_Wall.jpg);
+	background-color: rgb(255, 255, 255);
+	position: relative;
 	background-blend-mode: luminosity;
 	overflow: hidden;
+}
+
+body #content {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 20px;
+	max-width: 60ch;
+	font-family: "Itim", cursive;
+}
+
+@media screen and (max-width: 407px) {
+	#header-links {
+		font-size: 2.2ch;
+	}
+	body #content {
+		grid-auto-flow: row;
+	}
 }
