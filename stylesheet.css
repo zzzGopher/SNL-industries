@@ -1,98 +1,216 @@
 /** @format */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--logo-clr: #007e92;
+	--alt-clr: #520092;
+	--bg-clr: black;
+	--alt-clr2: #1e0036ea;
+	--spacing-unit: 1rem;
+	--mb-pad: calc(1 * var(--spacing-unit));
+}
+
+html,
+body {
+	overflow-x: hidden;
+	box-sizing: border-box;
+	width: 100vw;
+}
+
 html {
-	width: 100%;
-	height: 100%;
-	margin: 0%;
-	padding: 0%;
-}
-
-#spray-man {
-	position: fixed;
-	background-size: 10em;
-	background-image: url(images/Chicago_Closed_Cell_Spray_Foam_Insulation_In_Wall.jpg);
-	background-color: #0ab89b;
-	background-blend-mode: soft-light;
-	width: 100%;
-	clip-path: polygon(
-		42% 0,
-		35% 90%,
-		40% 90%,
-		45% 21%,
-		97% 25%,
-		96% 36%,
-		56% 35%,
-		52% 60%,
-		100% 60%,
-		100% 0
-	);
-	z-index: 2;
-}
-
-#snl-logo {
-}
-
-#header {
-	display: grid;
-	background-color: rgb(255, 255, 255);
-
-	position: sticky;
-	grid-auto-flow: column;
-	width: 100%;
-	margin: 0 auto;
-}
-
-#header-links {
-	font-family: "Oleo Script Swash Caps", cursive;
-	color: rgba(0, 0, 0, 0.685);
-	font-size: 3ch;
-	justify-self: right;
-	align-self: end;
-	padding-bottom: 10px;
-	padding-right: 30px;
-	text-decoration: none;
-}
-
-.box-shadow {
-	display: block;
-
-	width: 100%;
-	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.836);
-}
-
-img {
-	height: 10rem;
-	width: 10rem;
-
-	position: relative;
-	z-index: -1;
+	margin: 0;
+	font-family: "Odibee Sans", cursive;
+	color: white;
 }
 
 body {
-	position: relative;
+	padding: 0;
+	margin: 0;
+	background-color: rgb(0, 0, 0);
+}
 
-	height: 100%;
+header {
 	width: 100%;
-	margin: 0%;
-	padding: 0%;
-	background-color: rgb(255, 255, 255);
+	height: 3em;
+	margin: 0 auto;
+}
+
+nav,
+ul {
+	margin: 0;
+	width: 100%;
+	padding: 0;
+	height: 100%;
+}
+
+li {
+	padding: 0 2em;
+	list-style: none;
+	display: flex;
+	height: 100%;
+	margin: 0 auto;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.nav-bar a {
+	font-size: 3ch;
+	text-decoration: none;
+	color: white;
+	padding: 0.4rem;
+}
+
+#nav-links-home {
+	flex-grow: 3;
+}
+
+.top-section {
 	position: relative;
-	background-blend-mode: luminosity;
-	overflow: hidden;
+	width: 100vw;
+	height: 12em;
+	display: flex;
+	font-size: 3ch;
+	justify-content: center;
+	align-items: center;
 }
 
-body #content {
+.top-section h1 {
+	margin: 0;
+	align-self: flex-end;
+	justify-content: center;
+	width: inherit;
+}
+
+#logo {
+	align-self: flex-start;
+}
+
+#insulation-text {
+	color: var(--logo-clr);
+}
+
+.flex-top2 {
+	display: flex;
+	height: 9em;
+
+	justify-content: center;
+}
+
+#bg-image {
+	position: absolute;
+	width: 100vw;
+	height: 100%;
+	z-index: -3;
+	background-size: cover;
+	background-image: url(/images/6950426743_abf3c76f0e_b.jpg);
+	background-color: var(--alt-clr2);
+	background-blend-mode: darken;
+}
+
+.main-grid {
+	padding: 1em;
 	display: grid;
-	grid-auto-flow: column;
-	gap: 20px;
-	max-width: 60ch;
-	font-family: "Itim", cursive;
+	width: inherit;
+	grid-auto-flow: row;
+	grid-template-columns: repeat(2, 50%);
 }
 
-@media screen and (max-width: 407px) {
-	#header-links {
-		font-size: 2.2ch;
-	}
-	body #content {
-		grid-auto-flow: row;
-	}
+.mid-section {
+	border: solid;
+	grid-column: 0 / 1;
+}
+
+#spray {
+	width: 80vw;
+	height: 20vh;
+	grid-column: 1 / span 2;
+	grid-row: 1/2;
+	justify-self: center;
+}
+
+#mid-p {
+	margin: 0;
+	padding: 0rem;
+	font-size: 2.4ch;
+	grid-column: 1/3;
+	grid-row: 2/3;
+	padding: var(--mb-pad);
+}
+
+#location {
+	margin: 0;
+	text-decoration: underline;
+	font-size: 2rem;
+	grid-row: 3/4;
+	padding: var(--mb-pad);
+}
+
+#map {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	grid-row: 4/5;
+	grid-column: 1 / span 2;
+	filter: grayscale();
+}
+
+h3 {
+	position: relative;
+	margin: 0;
+	grid-row: 5/6;
+	grid-column: 1 / span 2;
+	justify-self: center;
+	padding: var(--mb-pad);
+}
+
+#stars {
+	padding: 8px 0 10px 0;
+	position: relative;
+	margin: 0;
+	font-size: 1.5rem;
+	grid-row: 6/7;
+	grid-column: 1 / span 2;
+	justify-self: center;
+	padding: var(--mb-pad);
+}
+
+#cust1,
+#cust2 {
+	grid-row: 7/8;
+	z-index: -1;
+}
+#cust1 {
+	grid-column: 1/2;
+}
+
+#cust2 {
+	grid-column: 2/3;
+}
+
+#custp1,
+#custp2 {
+	grid-row: 8/9;
+}
+
+#custp1 {
+	grid-column: 1/2;
+}
+
+#custp2 {
+	grid-column: 2/3;
+}
+
+footer {
+	grid-row: 9/10;
+	grid-column: 1 / span 3;
+	display: flex;
+	width: 100%;
+	height: 40px;
+	position: relative;
+	justify-content: center;
 }
